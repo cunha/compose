@@ -321,7 +321,7 @@ class TopLevelCommand(object):
             return
 
         if options['--hash'] is not None:
-            self.project = project_from_options('.', self.toplevel_options)
+            self.project = project_from_options('.', config_options)
             if options['--hash'] == "all":
                 for service in self.project.services:
                     print('{} {}'.format(service.name, service.config_hash))
